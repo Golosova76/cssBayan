@@ -2,9 +2,7 @@
 
 /* Обнуление стилей */
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -52,8 +50,10 @@ html {
 
 body {
   font-family: "Roboto", sans-serif;
-  background: #f5f5f5;
-  color: #4b4b4b;
+  background: #a1a0a0;
+  color: #211ad6;
+  font-size: 18px;
+  font-weight: 900;
 }
 
 .wrapper {
@@ -65,7 +65,7 @@ body {
 }
 
 [class*="__container"] {
-  max-width: 1050px;
+  max-width: 1950px;
   margin: 0px auto;
   padding: 0px 15px;
 }
@@ -74,3 +74,62 @@ body {
   flex-grow: 1;
 }
 /* Общие стили */
+.wrapper__container {
+}
+.accordion {
+}
+.accordion__container {
+}
+.title {
+  min-width: 800px;
+}
+
+.accordion__item {
+  min-width: 800px;
+}
+
+.accordion__body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion__body:hover ~ .accordion__image {
+  display: block;
+}
+
+.accordion__input {
+}
+
+.accordion__input:hover ~ .accordion__title {
+  cursor: pointer;
+  color: #000;
+}
+
+.accordion__input:hover ~ .accordion__arrow {
+  display: block;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.accordion__title {
+}
+
+.accordion__arrow {
+  display: none;
+}
+
+.accordion__arrow:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.accordion__image {
+  display: none;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.accordion__img {
+  width: 400px;
+  height: 400px;
+}
