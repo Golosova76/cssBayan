@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&display=swap");
+
+/* Обнуление стилей */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+body,
+html {
+  height: 100%;
+  line-height: 1;
+}
+
+/* Общие стили */
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #a1a0a0;
+  color: #211ad6;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+@media (max-width: 821px) {
+  body {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 321px) {
+  body {
+    font-size: 1rem;
+    font-weight: 800;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="__container"] {
+  width: 122rem;
+  padding: 0px 1rem;
+}
+
+@media (max-width: 821px) {
+  [class*="__container"] {
+    width: 50rem;
+    padding: 0px 0.1rem;
+  }
+}
+
+@media (max-width: 321px) {
+  [class*="__container"] {
+    width: 20rem;
+  }
+}
+
+.main {
+  flex-grow: 1;
+}
+/* Общие стили */
+.wrapper__container {
+}
+.accordion {
+  min-width: 55rem;
+  margin-left: 25rem;
+}
+
+@media (max-width: 821px) {
+  .accordion {
+    min-width: 50rem;
+    margin-left: 0rem;
+  }
+}
+
+@media (max-width: 321px) {
+  .accordion {
+    min-width: 20rem;
+  }
+}
+
+.accordion__container {
+}
+.title {
+  width: 50rem;
+  padding: 2rem 1rem 1rem 0rem;
+  border-bottom: 0.125rem solid rgb(74, 72, 72);
+}
+
+@media (max-width: 321px) {
+  .title {
+    width: 20rem;
+  }
+}
+
+.accordion__item {
+  width: 50rem;
+  border-bottom: 0.125rem solid rgb(74, 72, 72);
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 321px) {
+  .accordion__item {
+    width: 20rem;
+  }
+}
+
+.accordion__item:hover {
+  cursor: pointer;
+}
+
+.accordion__item:hover > .accordion__title > .accordion__arrow {
+  cursor: pointer;
+  display: block;
+  transition: all 0.5s ease 0s;
+  transform: rotate(180deg);
+}
+
+.accordion__item:active > .accordion__title,
+.accordion__item:active > .accordion__image {
+  cursor: pointer;
+  display: block;
+  transition: all 0.5s ease 0s;
+  height: 31.3rem;
+}
+
+.accordion__title:hover ~ .accordion__image {
+  transition: all 0.5s ease 0s;
+  height: 31.3rem;
+}
+
+@media (max-width: 321px) {
+  .accordion__title:hover ~ .accordion__image {
+    height: 19rem;
+  }
+}
+
+.accordion__item:hover > .accordion__title {
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  color: #000;
+}
+
+.accordion__input {
+}
+
+.accordion__input:checked ~ .accordion__image {
+  max-width: 32rem;
+  margin: 0 auto;
+  height: 31.3rem;
+  cursor: pointer;
+}
+
+@media (max-width: 321px) {
+  .accordion__input:checked ~ .accordion__image {
+    max-width: 19rem;
+    margin: 0 auto;
+    height: 19rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 321px) {
+  .accordion__input:checked ~ .accordion__image img {
+    max-width: 19rem;
+    margin: 0 auto;
+    height: 19rem;
+    cursor: pointer;
+  }
+}
+
+.accordion__input:checked ~ .accordion__title {
+  color: #000;
+}
+
+.accordion__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 1rem 0rem;
+  transition: all 0.5s ease 0s;
+}
+
+.accordion__arrow {
+  display: none;
+}
+
+.accordion__image {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease 0s;
+  text-align: center;
+}
