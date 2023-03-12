@@ -52,8 +52,22 @@ body {
   font-family: "Roboto", sans-serif;
   background: #a1a0a0;
   color: #211ad6;
-  font-size: 18px;
+  font-size: 1.5rem;
   font-weight: 900;
+}
+
+@media (max-width: 821px) {
+  body {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 321px) {
+  body {
+    font-size: 1rem;
+    font-weight: 800;
+  }
 }
 
 .wrapper {
@@ -65,9 +79,21 @@ body {
 }
 
 [class*="__container"] {
-  max-width: 1950px;
-  margin: 0px auto;
-  padding: 0px 15px;
+  width: 122rem;
+  padding: 0px 1rem;
+}
+
+@media (max-width: 821px) {
+  [class*="__container"] {
+    width: 50rem;
+    padding: 0px 0.1rem;
+  }
+}
+
+@media (max-width: 321px) {
+  [class*="__container"] {
+    width: 20rem;
+  }
 }
 
 .main {
@@ -77,59 +103,131 @@ body {
 .wrapper__container {
 }
 .accordion {
+  min-width: 55rem;
+  margin-left: 25rem;
 }
+
+@media (max-width: 821px) {
+  .accordion {
+    min-width: 50rem;
+    margin-left: 0rem;
+  }
+}
+
+@media (max-width: 321px) {
+  .accordion {
+    min-width: 20rem;
+  }
+}
+
 .accordion__container {
 }
 .title {
-  min-width: 800px;
+  width: 50rem;
+  padding: 2rem 1rem 1rem 0rem;
+  border-bottom: 0.125rem solid rgb(74, 72, 72);
+}
+
+@media (max-width: 321px) {
+  .title {
+    width: 20rem;
+  }
 }
 
 .accordion__item {
-  min-width: 800px;
+  width: 50rem;
+  border-bottom: 0.125rem solid rgb(74, 72, 72);
+  padding-bottom: 1rem;
 }
 
-.accordion__body {
-  display: flex;
-  justify-content: space-between;
+@media (max-width: 321px) {
+  .accordion__item {
+    width: 20rem;
+  }
 }
 
-.accordion__body:hover ~ .accordion__image {
+.accordion__item:hover {
+  cursor: pointer;
+}
+
+.accordion__item:hover > .accordion__title > .accordion__arrow {
+  cursor: pointer;
   display: block;
+  transition: all 0.5s ease 0s;
+  transform: rotate(180deg);
+}
+
+.accordion__item:active > .accordion__title,
+.accordion__item:active > .accordion__image {
+  cursor: pointer;
+  display: block;
+  transition: all 0.5s ease 0s;
+  height: 31.3rem;
+}
+
+.accordion__title:hover ~ .accordion__image {
+  transition: all 0.5s ease 0s;
+  height: 31.3rem;
+}
+
+@media (max-width: 321px) {
+  .accordion__title:hover ~ .accordion__image {
+    height: 19rem;
+  }
+}
+
+.accordion__item:hover > .accordion__title {
+  transition: all 0.5s ease 0s;
+  cursor: pointer;
+  color: #000;
 }
 
 .accordion__input {
 }
 
-.accordion__input:hover ~ .accordion__title {
+.accordion__input:checked ~ .accordion__image {
+  max-width: 32rem;
+  margin: 0 auto;
+  height: 31.3rem;
   cursor: pointer;
+}
+
+@media (max-width: 321px) {
+  .accordion__input:checked ~ .accordion__image {
+    max-width: 19rem;
+    margin: 0 auto;
+    height: 19rem;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 321px) {
+  .accordion__input:checked ~ .accordion__image img {
+    max-width: 19rem;
+    margin: 0 auto;
+    height: 19rem;
+    cursor: pointer;
+  }
+}
+
+.accordion__input:checked ~ .accordion__title {
   color: #000;
 }
 
-.accordion__input:hover ~ .accordion__arrow {
-  display: block;
-  cursor: pointer;
-  transform: rotate(180deg);
-}
-
 .accordion__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 1rem 0rem;
+  transition: all 0.5s ease 0s;
 }
 
 .accordion__arrow {
   display: none;
 }
 
-.accordion__arrow:hover {
-  cursor: pointer;
-  transform: rotate(180deg);
-}
-
 .accordion__image {
-  display: none;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.accordion__img {
-  width: 400px;
-  height: 400px;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease 0s;
+  text-align: center;
 }
